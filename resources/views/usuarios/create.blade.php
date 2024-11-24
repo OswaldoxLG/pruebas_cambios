@@ -40,6 +40,12 @@
             </div>
           </div>
           <div class="mb-3 row">
+            <label for="inputEmail" class="col-sm-2 col-form-label">Rol</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="rol" name="rol">
+            </div>
+          </div>
+          <div class="mb-3 row">
             <button type="submit" class="btn btn-primary" id="envio_user">Enviar</button>
             <a href="{{ route('usuarios.index') }}" class="btn btn-secondary">Volver</a>
           </div>
