@@ -10,9 +10,9 @@
 <table class="table table-striped">
     <thead>
         <tr>
-        <th scope="col">id</th>
-        <th scope="col">Cliente</th>
-        <th scope="col">Correo</th>
+        <th scope="col">ID</th>
+        <th scope="col">USUARIO</th>
+        <th scope="col">CORREO</th>
         <th scope="col"></th>
         <th scope="col"></th>
         </tr>
