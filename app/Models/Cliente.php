@@ -14,5 +14,6 @@ class Cliente extends Model
         'nombre',
         'correo', 
         'contrasena',
+        'rol',
     ];
 }
