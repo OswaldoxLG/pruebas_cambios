@@ -13,7 +13,7 @@
     @endif
 
     <h1>Crear</h1>
-    <form action="{{ route('clientes.store') }}" method="POST">
+    <form action="{{ route('usuarios.store') }}" method="POST">
         @csrf
         <div class="mb-3 row">
             <label for="Email" class="col-sm-2 col-form-label">Nombre</label>
@@ -34,8 +34,14 @@
             </div>
           </div>
           <div class="mb-3 row">
+            <label for="inputEmail" class="col-sm-2 col-form-label">Rol</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="rol" name="rol">
+            </div>
+          </div>
+          <div class="mb-3 row">
             <button type="submit" class="btn btn-primary" id="envio_user">Enviar</button>
-            <a href="{{ route('clientes.index') }}" class="btn btn-secondary">Volver</a>
+            <a href="{{ route('usuarios.index') }}" class="btn btn-secondary">Volver</a>
           </div>
     </form>
 @endsection

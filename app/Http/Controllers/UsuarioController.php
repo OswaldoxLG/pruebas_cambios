@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cliente;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 
-class ClienteController extends Controller
+class UsuarioController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $clientes = Cliente::paginate(2);
-        return view('clientes.index', compact('clientes'));
+        $usuarios = Usuario::paginate(2);
+        return view('usuarios.index', compact('usuarios'));
     }
 
     /**
@@ -22,7 +22,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('clientes.create');
+        return view('usuarios.create');
     }
 
     /**
@@ -35,15 +35,17 @@ class ClienteController extends Controller
             'nombre' => 'required',
             'correo' => 'required',
             'contrasena' => 'required',
+            'rol' => 'required',
         ]);
 
-        $cliente = new Cliente();
-        $cliente->nombre = $request->nombre;
-        $cliente->correo = $request->correo;
-        $cliente->contrasena = $request->contrasena;
-        $cliente->save();
+        $usuario = new Usuario();
+        $usuario->nombre = $request->nombre;
+        $usuario->correo = $request->correo;
+        $usuario->contrasena = $request->contrasena;
+        $usuario->rol = $request->rol;
+        $usuario->save();
 
-        return redirect()->route('clientes.index');
+        return redirect()->route('usuarios.index');
     }
 
     /**
@@ -59,8 +61,8 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        $cliente = Cliente::find($id);
-        return view('clientes.edit', compact('cliente'));
+        $usuario = Usuario::find($id);
+        return view('Usuarios.edit', compact('usuario'));
     }
 
     /**
@@ -73,12 +75,12 @@ class ClienteController extends Controller
             'correo' => 'required',
         ]);
 
-        $cliente = Cliente::find($id);
-        $cliente->nombre = $request->nombre;
-        $cliente->correo = $request->correo;
-        $cliente->save();
+        $usuario = Usuario::find($id);
+        $usuario->nombre = $request->nombre;
+        $usuario->correo = $request->correo;
+        $usuario->save();
 
-        return redirect()->route('clientes.index');
+        return redirect()->route('usuarios.index');
     }
 
     /**
@@ -86,8 +88,8 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        $cliente = Cliente::find($id);
-        $cliente->delete();
-        Return redirect()->route('clientes.index');
+        $usuario = Usuario::find($id);
+        $usuario->delete();
+        Return redirect()->route('usuarios.index');
     }
 }
